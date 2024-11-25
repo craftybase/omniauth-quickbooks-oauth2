@@ -13,9 +13,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/abeland/omniauth-quickbooks-oauth2'
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split("\n")
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.files         = Dir["lib/**/*.rb"]
+  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'omniauth', '~>1.3'
